@@ -13,7 +13,7 @@
     <title>Video Sample</title>
 
     <style type="text/css">
-        #my-player{
+        #random-player{
             width: 800px;
             height: 450px;
         }
@@ -23,7 +23,7 @@
 
 <body>
 
-    <video id="my-player" class="video-js" loop muted preload="auto">
+    <video id="random-player" class="video-js" loop muted preload="auto">
         <source src="1080p.mp4" type="video/mp4"></source>
         <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -32,7 +32,7 @@
 
     <script>
         // Initialize video tag ID
-        var player = videojs('my-player');
+        var player = videojs('random-player');
 
         var options = {};
 
@@ -40,7 +40,7 @@
         var timestamp = [0,6,11];
 
         // When load video file
-        var player = videojs('my-player', options, function onPlayerReady() {
+        var player = videojs('random-player', options, function onPlayerReady() {
 
             // alert('Your player is ready!');
 
