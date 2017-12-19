@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Video.js -->
+    <link href="http://vjs.zencdn.net/6.4.0/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/6.4.0/video.js"></script>
+
+    <title>Video Sample</title>
+
+    <style type="text/css">
+        #my-player{
+            width: 800px;
+            height: 450px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <video id="my-player" class="video-js" loop muted preload="auto">
+        <source src="1080p.mp4" type="video/mp4"></source>
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
+
+    <script>
+        // Initialize video tag ID
+        var player = videojs('my-player');
+
+        var options = {};
+
+        // Create timestamp array
+        var timestamp = [0,6,11];
+
+        // When load video file
+        var player = videojs('my-player', options, function onPlayerReady() {
+
+            // alert('Your player is ready!');
+
+            // Get a random start timestamp from the array
+            var currentTime = timestamp[Math.floor(Math.random() * timestamp.length)];
+
+            alert(currentTime + "秒からスタート");
+
+            // Set the random start timestamp as a propaty on a Video.js player
+            this.currentTime(currentTime);
+
+            // Play
+            this.play();
+
+        });
+    </script>
+
+    <p><a href="https://github.com/videojs/video.js/" target="_blank">video.js</a></p>
+</body>
+</html>
